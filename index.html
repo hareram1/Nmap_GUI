@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nmap Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="dashboard">
+<header class="header">
+<h1>Nmap Dashboard</h1>
+</header>
+
+<section class="prerequisites">
+<h2>Prerequisites</h2>
+<p>Before you can run the Nmap Dashboard, you need to have the following installed and configured:</p>
+<ul>
+<li><strong>Node.js and npm:</strong> Node.js is required to run the server. npm is used to manage dependencies.</li>
+<li><strong>Nmap:</strong> The Nmap tool must be installed to perform network scans.</li>
+</ul>
+
+<h3>Installation Steps</h3>
+<div class="step">
+<h4>1. Install Node.js and npm</h4>
+<p>Download and install Node.js from the <a href="https://nodejs.org/" target="_blank">official Node.js website</a>. This will also install npm.</p>
+<pre><code>
+# For Windows and macOS:
+# Download the installer from the official website and follow the instructions
+
+# For Linux:
+sudo apt update
+sudo apt install nodejs npm
+</code></pre>
+</div>
+
+<div class="step">
+<h4>2. Install Nmap</h4>
+<p>Install Nmap according to your operating system:</p>
+<pre><code>
+# For Windows:
+# Download the installer from the <a href="https://nmap.org/download.html" target="_blank">Nmap official website</a> and follow the instructions
+
+# For macOS (using Homebrew):
+brew install nmap
+
+# For Linux (Debian-based distributions):
+sudo apt update
+sudo apt install nmap
+</code></pre>
+</div>
+
+<div class="step">
+<h4>3. Set Up the Project</h4>
+<p>Clone or download the project, then install the necessary dependencies.</p>
+<pre><code>
+# Clone the repository
+git clone https://github.com/hareram1/Nmap_GUI.git
+cd your-repository
+
+# Install dependencies
+npm install
+</code></pre>
+</div>
+
+<div class="step">
+<h4>4. Run the Server</h4>
+<p>Start the server with Node.js.</p>
+<pre><code>
+node server.js
+</code></pre>
+<p>The server will be running on <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>. Open this URL in your web browser to use the Nmap Dashboard.</p>
+</div>
+</section>
+
+<div class="input-section">
+<div class="input-group">
+<label for="target">Target IP:</label>
+<input type="text" id="target" placeholder="Enter target IP or domain" data-tooltip="Enter the IP address or domain you want to scan">
+</div>
+
+<div class="input-group">
+<label for="options">Nmap Options:</label>
+<input type="text" id="options" placeholder="Enter Nmap options (e.g., -sS, -A)" data-tooltip="Specify the Nmap options. For example, -sS for a SYN scan">
+</div>
+
+<button id="run-scan">Run Scan</button>
+</div>
+
+<section class="results-section">
+<h2>Scan Results</h2>
+<div id="spinner" class="spinner hidden">
+<div class="loader"></div>
+Scanning...
+</div>
+<pre id="results"></pre>
+</section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
